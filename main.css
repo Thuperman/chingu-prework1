@@ -1,0 +1,52 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: white;
+}
+
+nav.topNav {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logoBox {
+    height: inherit;
+    display: flex;
+}
+.logoBox>a {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.navLinx {
+    height: inherit;
+    display: flex;
+}
+.navLinx>a {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.pageNav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+    margin: 10px 0 0 0;
+}
+.pageNavbar {
+    width: 80%;
+    height: inherit;
+    border: 1px solid red;
+    border-radius: 50px;
+}
