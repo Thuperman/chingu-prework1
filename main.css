@@ -49,4 +49,20 @@ nav.topNav {
     height: inherit;
     border: 1px solid red;
     border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.pageNavbar>p {
+    margin: 0;
+}
+input {
+    border: none;
+    z-index: 0;
+}
+
+.pxNum {
+    z-index: 1;
+    left: 20px;
+    position: inherit;
+
 }
