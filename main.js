@@ -1,34 +1,36 @@
-var finished = false;
-var tString = [];
-var iTrigger0 = document.querySelector(".iTrigger0");
-var fonText = document.querySelector(".fonText");
-iTrigger0.addEventListener("keydown", function(e) {
-  console.log("hello" + e.keyCode);
-  // fonText.innerHTML = "wooo hooooo it worked";
-  if(e.keyCode == 65){
-    tString.push('a');
-  } else if(e.keyCode == 66){
-    tString.push('b');
-  } else if(e.keyCode == 67){
-    tString.push('c');
-  } else if(e.keyCode == 68){
-    tString.push('d');
-  } else if(e.keyCode == 8) {
-    tString.pop();
-  }
-  fonText.innerHTML = tString.join('');
+var iTrigger = document.querySelector("#iTrigger");
+var fonText = document.querySelectorAll(".fonText");
+var defaultT = fonText[0].getAttribute("data-defaulttext"); 
+var iValue;
+
+fonText.forEach(fontCard => {
+  fontCard.innerHTML = defaultT;
 });
-if(tString.length < 1){
-  console.log("empty tString");
-  fonText.innerHTML = "swagmedownbro"
+
+iTrigger.oninput = function() {
+  iValue = document.querySelector('#iTrigger').value
+  fonText.forEach(fontCard => {
+    fontCard.innerHTML = iValue;
+    if(fontCard.innerHTML == ""){
+      fontCard.innerHTML = defaultT;
+    }
+  });
 }
-// if(finished == true){
-//   console.log(tString.join(''));
-//   console.log("this is supposed to happen after typing");
-//   console.log(finished);
-//   finished = false;
-//   tString = [];
-// }
+
+// iTrigger.addEventListener("keyup", function() {
+//   iValue = document.querySelector('#iTrigger').value
+
+//   fonText.forEach(fontCard => {
+//     fontCard.innerHTML = iValue;
+//   });
+
+// });
+
+
+
+
+
+
 
 
 //capture the keys pressed
@@ -36,19 +38,3 @@ if(tString.length < 1){
 //add them into a variable/array?
 //update the tile per key pressed
 
-
-// switch (e.keyCode) {
-//   case 65: 
-//     console.log('a is initiated');
-//     tString.push('a')
-//     break;
-//   case 66:
-//     console.log('b is initiated');
-//     tString.push('b');
-//   case 67:
-//     console.log('true is initiated');
-//     finished == true;
-// default:
-//   console.log('didnt work'); 
-//   return;
-// }

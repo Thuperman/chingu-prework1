@@ -53,8 +53,7 @@ nav.topNav {
     height: inherit;
     border: 1px solid red;
     border-radius: 50px;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
 }
 .manipBar>p {
     margin: 0;
@@ -64,12 +63,36 @@ input {
     z-index: 0;
     margin-left: 20px;
 }
-.pxNum {
-    z-index: 1;
-    left: 20px;
-    position: inherit;
+.pxMenu {
+    display: inline-flex;
+    border: 1px solid red;
+    height: 20px;
+    padding: 0;
+    margin: 0;
 }
 
+
+.downCaret {
+    width: 15px;
+    height: 15px;
+    padding-left: 10px;
+}
+.pxOptions {
+    border: 1px solid red;
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 85px;
+    display: flex;
+    flex-direction: column;
+}
+.pxOpt {
+    display: flex;
+    flex-direction: row;
+    height: 15px;
+    width: 100%;
+    border: 1px solid black;
+}
 
 .pageContainer {
     margin: 20px auto;
@@ -113,11 +136,14 @@ input {
 .tileP {
     margin: 0;
 }
+
+
 .pSign {
     height: 19px;
     width: 19px;
     padding-top: 5px;
     cursor: pointer;
+
 }
 
 
