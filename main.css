@@ -1,3 +1,12 @@
+.pSign {
+    padding-top: 5px;
+    cursor: pointer;
+
+}
+.downCaret {
+    padding: 2px 6px 0 6px;
+}
+
 body, html {
     width: 100%;
     height: 100%;
@@ -69,29 +78,43 @@ input {
     height: 20px;
     padding: 0;
     margin: 0;
+    width: 55px;
+    cursor: pointer;
 }
-
-
-.downCaret {
-    width: 15px;
-    height: 15px;
-    padding-left: 10px;
-}
-.pxOptions {
+#pxOptContainer {
     border: 1px solid red;
-    width: 50px;
+    width: 74px;
     height: 100px;
     position: absolute;
+    display: none;
     top: 85px;
-    display: flex;
     flex-direction: column;
+    overflow: hidden scroll;
+    margin-left: -1px;
 }
 .pxOpt {
     display: flex;
     flex-direction: row;
-    height: 15px;
+    min-height: 20px;
     width: 100%;
-    border: 1px solid black;
+}
+.pxP {
+    width: 55px;
+    height: 100%;
+    float: left;
+    border: 1px solid purple;
+    background-color: aqua;
+    padding: 0;
+    text-align: center;
+    line-height: 16px;
+    margin: auto;
+    margin-right: 3px;
+    margin-left: -2px;
+    cursor: pointer;
+}
+
+.pxP.color {
+    background-color: grey;
 }
 
 .pageContainer {
@@ -138,13 +161,6 @@ input {
 }
 
 
-.pSign {
-    height: 19px;
-    width: 19px;
-    padding-top: 5px;
-    cursor: pointer;
-
-}
 
 
 .footer {
