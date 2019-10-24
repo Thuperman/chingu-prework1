@@ -3,11 +3,19 @@ var iTrigger = document.querySelector("#iTrigger");
 var fonText = document.querySelectorAll(".fonText");
 var defaultT = fonText[0].getAttribute("data-defaulttext"); 
 var iValue;
+
 //make all the cards show their default on load
-fonText.forEach(fontCard => {
-  fontCard.style.fontSize = "14px";
-  fontCard.innerHTML = defaultT;
-});
+function redo(){
+  iTrigger.value = "";
+  fonText.forEach(fontCard => {
+    fontCard.style.fontSize = "14px";
+    fontCard.innerHTML = defaultT;
+  });
+}
+//start defaul on load
+redo();
+//reset the page when redo button clicked
+  document.querySelector('.redo').onclick = function(){redo()};
 //change font card to input value and then revert to default if no value
 iTrigger.oninput = function() {
   iValue = document.querySelector('#iTrigger').value
@@ -18,13 +26,12 @@ iTrigger.oninput = function() {
     }
   });
 }
-
-
 //pixel menu show/hide + hover color
 //initialize variables
 var pxMenu = document.querySelector(".pxMenu");
 var pxOptContainer = document.querySelector("#pxOptContainer");
 var pxP = document.querySelectorAll(".pxP"); 
+var body = document.querySelector('body');
 //disable created class for pixel options
 pxP.forEach(element => {
   element.classList.remove("color");
@@ -35,39 +42,37 @@ pxOptContainer.addEventListener("mouseout", toggleA2);
 //show / hide the pixel option menu
 function toggleA1(){
   pxOptContainer.style.display = "flex";
+  body.style.overflow = "hidden";
 }
 function toggleA2(){
   pxOptContainer.style.display = "none";
+  body.style.overflow = "hidden scroll";
 }
-//listen for mouse on / off for pixel options
+//listen for mouse on / off for color pixel options
 pxP.forEach(element => {
   element.addEventListener("mouseover", toggleB1);
 });
 pxP.forEach(element => {
   element.addEventListener("mouseout", toggleB2);
 });
-//mouse on color on / mouse out color off for pixel options
+//color on mouse on / mouse out color off for pixel options
 function toggleB1(){
   this.classList.toggle("color");
 }
 function toggleB2(){
   this.classList.toggle("color");
 }
-
-
 //change pixel size of text when pixel option clicked
 pxP.forEach(element => {
   element.addEventListener("click", toggleTextSize);
 });
-
-
 function changeFontSize(target){
   fonText.forEach(e => {
     e.style.fontSize = target;
   });
   }
   function changeButtonText(target){
-    pxMenu.innerHTML = target;
+    document.querySelector('.currentPx').innerHTML = target;
   }
 function toggleTextSize(element){
   var target = element.explicitOriginalTarget.innerHTML;
@@ -114,6 +119,8 @@ function toggleTextSize(element){
     break;
   }
 }
+
+
 
 // case "18px": 
     // fonText.forEach(e => {

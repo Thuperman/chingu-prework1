@@ -1,5 +1,6 @@
 .pSign {
     padding-top: 5px;
+    padding-right: 1px;
     cursor: pointer;
 
 }
@@ -23,7 +24,9 @@ nav.topNav {
     flex-direction: row;
     justify-content: space-between;
 }
-
+button.redo {
+    cursor: pointer;
+}
 
 .logoBox {
     height: inherit;
@@ -63,6 +66,7 @@ nav.topNav {
     border: 1px solid red;
     border-radius: 50px;
     display: inline-flex;
+    justify-content: space-between;
 }
 .manipBar>p {
     margin: 0;
@@ -81,6 +85,9 @@ input {
     width: 55px;
     cursor: pointer;
 }
+p.currentPx {
+    margin: 0;
+}
 #pxOptContainer {
     border: 1px solid red;
     width: 74px;
@@ -91,6 +98,7 @@ input {
     flex-direction: column;
     overflow: hidden scroll;
     margin-left: -1px;
+    justify-content: space-between;
 }
 .pxOpt {
     display: flex;
@@ -138,6 +146,7 @@ input {
     border: 5px solid black;
     width: 300px;
     height: 300px;
+    overflow: hidden;
 }
 .tileRow1 {
     margin: 0;
@@ -159,8 +168,33 @@ input {
 .tileP {
     margin: 0;
 }
-
-
+p.fonText {
+    word-wrap: break-word;
+}
+p.fonText.ft1 {
+    font-family: 'Roboto', sans-serif;
+}
+p.fonText.ft2 {
+    font-family: 'Jomolhari', serif;
+}
+p.fonText.ft3 {
+    font-family: 'Liu Jian Mao Cao', cursive;
+}
+p.fonText.ft4 {
+    font-family: 'Open Sans', sans-serif;
+}
+p.fonText.ft5 {
+    font-family: 'Lato', sans-serif;
+}
+p.fonText.ft6 {   
+    font-family: 'Montserrat', sans-serif;
+}
+p.fonText.ft7 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+p.fonText.ft8 {
+    font-family: 'Big Shoulders Text', cursive;
+}
 
 
 .footer {
