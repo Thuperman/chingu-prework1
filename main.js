@@ -122,6 +122,34 @@ function toggleTextSize(element){
 
 
 
+// search fonts 
+var sFonts = document.querySelector('.searchFonts');
+var fonType = document.querySelectorAll('.fType');
+sFonts.addEventListener("keyup", searchFonts);
+
+function searchFonts(){
+
+  document.querySelectorAll('.tile').forEach(element => {
+    element.style.display = "block";
+  });
+
+  var targetContent = this.value;
+  fonType.forEach((e) => {
+    if((e.innerHTML.includes(targetContent)) !== true){
+      var tileIndex = e.getAttribute("data-tileIndex");
+      var test = document.querySelector("." + tileIndex);
+      test.style.display = "none";
+    }
+  });
+}
+
+
+
+
+
+
+
+
 // case "18px": 
     // fonText.forEach(e => {
     //   e.style.fontSize = "18px";
