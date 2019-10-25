@@ -137,8 +137,8 @@ function searchFonts(){
   fonType.forEach((e) => {
     if((e.innerHTML.includes(targetContent)) !== true){
       var tileIndex = e.getAttribute("data-tileIndex");
-      var test = document.querySelector("." + tileIndex);
-      test.style.display = "none";
+      var getTileIndex = document.querySelector("." + tileIndex);
+      getTileIndex.style.display = "none";
     }
   });
 }
