@@ -123,6 +123,7 @@ function toggleTextSize(element){
 
 
 // search fonts 
+//replace .includes() with .match() to fix case sensitive bug -- https://www.w3schools.com/Jsref/tryit.asp?filename=tryjsref_match_regexp2
 var sFonts = document.querySelector('.searchFonts');
 var fonType = document.querySelectorAll('.fType');
 sFonts.addEventListener("keyup", searchFonts);
