@@ -136,7 +136,8 @@ function searchFonts(){
 
   var targetContent = this.value;
   fonType.forEach((e) => {
-    if((e.innerHTML.includes(targetContent)) !== true){
+    var re = new RegExp(targetContent, "gi");
+    if((e.innerHTML.match(re)) == null){
       var tileIndex = e.getAttribute("data-tileIndex");
       var getTileIndex = document.querySelector("." + tileIndex);
       getTileIndex.style.display = "none";
@@ -144,7 +145,7 @@ function searchFonts(){
   });
 }
 
-
+// if((e.innerHTML.includes(targetContent)) !== true)
 
 
 
