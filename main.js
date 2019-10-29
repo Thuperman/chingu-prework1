@@ -1,21 +1,40 @@
-//change font text on input + revert to default on empty
+//Made my Jason P. Warner --inspired by google.
+
+var sFonts = document.querySelector('.searchFonts');
 var iTrigger = document.querySelector("#iTrigger");
 var fonText = document.querySelectorAll(".fonText");
 var defaultT = fonText[0].getAttribute("data-defaulttext"); 
+var tilesList = document.querySelectorAll('.listIt');
+var sFonts = document.querySelector('.searchFonts');
+var fonType = document.querySelectorAll('.fType');
 var iValue;
 
 //make all the cards show their default on load
+function defaultTileWidth(){
+  tilesList.forEach(element => {
+    element.style.width = '300px';
+  });
+}
 function redo(){
+  sFonts.value = "";
   iTrigger.value = "";
+  defaultTileWidth();
   fonText.forEach(fontCard => {
     fontCard.style.fontSize = "14px";
     fontCard.innerHTML = defaultT;
   });
+  searchFonts();
 }
-//start defaul on load
+//start default on load
 redo();
+
 //reset the page when redo button clicked
-  document.querySelector('.redo').onclick = function(){redo()};
+document.querySelector('.redo').onclick = function(){
+  document.querySelector('.mainGrid').classList.toggle('mgList');
+  redo();
+}
+
+
 //change font card to input value and then revert to default if no value
 iTrigger.oninput = function() {
   iValue = document.querySelector('#iTrigger').value
@@ -26,8 +45,11 @@ iTrigger.oninput = function() {
     }
   });
 }
-//pixel menu show/hide + hover color
+
+
+//pixel menu show/hide
 //initialize variables
+var pxMenuContainer = document.querySelector('.pxMenuContainer');
 var pxMenu = document.querySelector(".pxMenu");
 var pxOptContainer = document.querySelector("#pxOptContainer");
 var pxP = document.querySelectorAll(".pxP"); 
@@ -37,7 +59,7 @@ pxP.forEach(element => {
   element.classList.remove("color");
 });
 //listen mouse on and mouse off of the pixel button
-pxMenu.addEventListener("mouseover", toggleA1);
+pxMenuContainer.addEventListener("mouseover", toggleA1);
 pxOptContainer.addEventListener("mouseout", toggleA2);
 //show / hide the pixel option menu
 function toggleA1(){
@@ -48,6 +70,8 @@ function toggleA2(){
   pxOptContainer.style.display = "none";
   body.style.overflow = "hidden scroll";
 }
+
+
 //listen for mouse on / off for color pixel options
 pxP.forEach(element => {
   element.addEventListener("mouseover", toggleB1);
@@ -62,18 +86,24 @@ function toggleB1(){
 function toggleB2(){
   this.classList.toggle("color");
 }
+
+
 //change pixel size of text when pixel option clicked
+//listen for click on pixel options 
 pxP.forEach(element => {
   element.addEventListener("click", toggleTextSize);
 });
+//change font size function
 function changeFontSize(target){
   fonText.forEach(e => {
     e.style.fontSize = target;
   });
   }
-  function changeButtonText(target){
-    document.querySelector('.currentPx').innerHTML = target;
-  }
+//change button text
+function changeButtonText(target){
+  document.querySelector('.currentPx').innerHTML = target;
+}
+//execute above functions when options clicked
 function toggleTextSize(element){
   var target = element.explicitOriginalTarget.innerHTML;
   switch (target) {
@@ -121,20 +151,13 @@ function toggleTextSize(element){
 }
 
 
-
 // search fonts 
-//replace .includes() with .match() to fix case sensitive bug -- https://www.w3schools.com/Jsref/tryit.asp?filename=tryjsref_match_regexp2
-var sFonts = document.querySelector('.searchFonts');
-var fonType = document.querySelectorAll('.fType');
 sFonts.addEventListener("keyup", searchFonts);
-
 function searchFonts(){
-
-  document.querySelectorAll('.tile').forEach(element => {
-    element.style.display = "block";
-  });
-
   var targetContent = this.value;
+  document.querySelectorAll('.tile').forEach(element => {
+    element.style.display = "inline-block";
+  });
   fonType.forEach((e) => {
     var re = new RegExp(targetContent, "gi");
     if((e.innerHTML.match(re)) == null){
@@ -145,11 +168,23 @@ function searchFonts(){
   });
 }
 
+
+//change font layout when list button clicked
+var listB = document.querySelector('.list');
+listB.addEventListener('click', toggleList);
+function toggleList(){
+  document.querySelector('.mainGrid').classList.toggle('mgList');
+  document.querySelectorAll('.tile').forEach(element => {
+    if(element.style.width == "300px"){
+      element.style.width = "100%"
+    } else if(element.style.width == "100%") {
+      element.style.width = "300px";
+    }
+  });
+}
+
+
 // if((e.innerHTML.includes(targetContent)) !== true)
-
-
-
-
 
 
 // case "18px": 
@@ -197,25 +232,6 @@ function searchFonts(){
     //   e.style.fontSize = "34px";
     // });
     // break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // if(target == "16px"){

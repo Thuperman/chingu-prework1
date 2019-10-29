@@ -45,11 +45,13 @@
                     <input class="searchFonts" name="searchFonts" type="text" placeholder="Search Fonts">
                     <input id="iTrigger" name="typeSomething" class="iTrigger" type="text" placeholder="Type Something">
                 </form>
-                <button class="pxMenu">
-                    <p class="currentPx">14px</p>
-                    <span class="dcSpan">
-                        <img class="downCaret" src="img/caret-down.svg" alt="see menu" width="15px" height="15px">
-                    </span>
+                <div class="pxMenuContainer">
+                    <button class="pxMenu">
+                        <p class="currentPx">14px</p>
+                        <span class="dcSpan">
+                            <img class="downCaret" src="img/caret-down.svg" alt="see menu" width="15px" height="15px">
+                        </span>
+                    </button>
                     <div id="pxOptContainer">
                         <div class="pxOpt">
                             <p class="pxP color">16px</p>
@@ -82,6 +84,11 @@
                             <p class="pxP color">34px</p>
                         </div>
                     </div>
+                </div>
+                <button class="list">
+                    <span>
+                        <img src="img/th-list-solid.svg" alt="" width="20" height="20">
+                    </span>
                 </button>
                 <button class="redo">
                     <span>
@@ -92,8 +99,8 @@
         </div>
 
         <div class="pageContainer">
-            <ol class="mainGrid">
-                <li class="tile i0">
+            <ol class="mainGrid mgList">
+                <li class="tile i0 listIt">
                     <div class="tileRow1">
                         <p class="tileP fType" data-tileIndex="i0">
                             Roboto
@@ -109,7 +116,7 @@
                     </div>
                     <p data-defaulttext="default Text" class="fonText ft1"></p>
                 </li>
-                <li class="tile i1">
+                <li class="tile i1 listIt">
                     <div class="tileRow1">
                         <p class="tileP fType" data-tileIndex="i1">
                             Jomolhari
@@ -125,7 +132,7 @@
                     </div>
                     <p data-defaulttext="default Text" class="fonText ft2"></p>
                 </li>
-                <li class="tile i2">
+                <li class="tile i2 listIt">
                     <div class="tileRow1">
                         <p class="tileP fType" data-tileIndex="i2">
                             Liu Jian Mao Cao
@@ -141,7 +148,7 @@
                     </div>
                     <p data-defaulttext="default Text" class="fonText ft3"></p>
                 </li>
-                <li class="tile i3">
+                <li class="tile i3 listIt">
                     <div class="tileRow1">
                         <p class="tileP fType" data-tileIndex="i3">
                             Open Sans
@@ -157,7 +164,7 @@
                     </div>
                     <p data-defaulttext="default Text" class="fonText ft4"></p>
                 </li>
-                <li class="tile i4">
+                <li class="tile i4 listIt">
                     <div class="tileRow1 ">
                         <p class="tileP fType" data-tileIndex="i4">
                             Lato
@@ -173,7 +180,7 @@
                     </div>
                     <p data-defaulttext="default Text" class="fonText ft5"></p>
                 </li>
-                <li class="tile i5">
+                <li class="tile i5 listIt">
                     <div class="tileRow1">
                         <p class="tileP fType" data-tileIndex="i5">
                             Montserrat
@@ -189,7 +196,7 @@
                     </div>
                     <p data-defaulttext="default Text" class="fonText ft6"></p>
                 </li>
-                <li class="tile i6">
+                <li class="tile i6 listIt">
                     <div class="tileRow1">
                         <p class="tileP fType" data-tileIndex="i6">
                             Roboto Condensed
@@ -205,7 +212,7 @@
                     </div>
                     <p data-defaulttext="default Text" class="fonText ft7"></p>
                 </li>
-                <li class="tile i7" >
+                <li class="tile i7 listIt" >
                     <div class="tileRow1">
                         <p class="tileP fType" data-tileIndex="i7">
                             Big Shoulders Text 
