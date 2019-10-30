@@ -43,14 +43,16 @@
         <div class="manipContainer"> 
             <div class="manipBar light dark">
                 <form class="navform">
-                    <input name="searchFonts" type="text" placeholder="Search Fonts" class="srchFonts">
+                    <input class="searchFonts" name="searchFonts" type="text" placeholder="Search Fonts">
                     <input id="iTrigger" name="typeSomething" class="iTrigger" type="text" placeholder="Type Something">
                 </form>
-                <button class="pxMenu">
-                    <p class="currentPx">14px</p>
-                    <span>
-                        <img class="downCaret" src="img/caret-down.svg" alt="see menu">
-                    </span>
+                <div class="pxMenuContainer">
+                    <button class="pxMenu">
+                        <p class="currentPx">14px</p>
+                        <span class="dcSpan">
+                            <img class="downCaret" src="img/caret-down.svg" alt="see menu" width="15px" height="15px">
+                        </span>
+                    </button>
                     <div id="pxOptContainer">
                         <div class="pxOpt">
                             <p class="pxP color">16px</p>
@@ -83,6 +85,11 @@
                             <p class="pxP color">34px</p>
                         </div>
                     </div>
+                </div>
+                <button class="list">
+                    <span>
+                        <img src="img/th-list-solid.svg" alt="" width="20" height="20">
+                    </span>
                 </button>
                 <div class="buttons">
                     <div class="ldToggle">
@@ -107,10 +114,10 @@
         </div>
 
         <div class="pageContainer">
-            <ol class="mainGrid">
-                <li class="tile light dark">
+            <ol class="mainGrid mgList">
+                <li class="tile i0 listIt light dark">
                     <div class="tileRow1">
-                        <p class="tileP">
+                        <p class="tileP fType" data-tileIndex="i0">
                             Roboto
                         </p>
                         <span>
@@ -124,9 +131,9 @@
                     </div>
                     <p data-defaulttext="What if the cheap smile ate the ear? The wiggly fault can't rush the upper." class="fonText ft1"></p>
                 </li>
-                <li class="tile light dark">
+                <li class="tile i1 listIt light dark">
                     <div class="tileRow1">
-                        <p class="tileP">
+                        <p class="tileP fType" data-tileIndex="i1">
                             Jomolhari
                         </p>
                         <span >
@@ -140,9 +147,9 @@
                     </div>
                     <p data-defaulttext="The sunny chemical can't delay the rule. The awful weight locks into the cylindrical coffee." class="fonText ft2"></p>
                 </li>
-                <li class="tile light dark">
+                <li class="tile i2 listIt light dark">
                     <div class="tileRow1">
-                        <p class="tileP">
+                        <p class="tileP fType" data-tileIndex="i2">
                             Liu Jian Mao Cao
                         </p>
                         <span >
@@ -156,9 +163,9 @@
                     </div>
                     <p data-defaulttext="The juicy weird clears into the rebel history. The dismal bitter can't hook the king." class="fonText ft3"></p>
                 </li>
-                <li class="tile light dark">
+                <li class="tile i3 listIt light dark">
                     <div class="tileRow1">
-                        <p class="tileP">
+                        <p class="tileP fType" data-tileIndex="i3">
                             Open Sans
                         </p>
                         <span >
@@ -172,9 +179,9 @@
                     </div>
                     <p data-defaulttext="The few week can't escape the tennis. Did the neighboring prior really mine the cut?" class="fonText ft4"></p>
                 </li>
-                <li class="tile light dark">
-                    <div class="tileRow1">
-                        <p class="tileP">
+                <li class="tile i4 listIt light dark">
+                    <div class="tileRow1 ">
+                        <p class="tileP fType" data-tileIndex="i4">
                             Lato
                         </p>
                         <span >
@@ -188,12 +195,12 @@
                     </div>
                     <p data-defaulttext="The disloyal bar can't bathe the bunch. Is the kneel help better than the high?" class="fonText ft5"></p>
                 </li>
-                <li class="tile light dark">
+                <li class="tile i5 listIt light dark">
                     <div class="tileRow1">
-                        <p class="tileP">
+                        <p class="tileP fType" data-tileIndex="i5">
                             Montserrat
                         </p>
-                        <span >
+                        <span>
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="19px" height="19px">
                         </span>
                     </div>
@@ -204,9 +211,9 @@
                     </div>
                     <p data-defaulttext="What if the broad maximum ate the raise? It was then the fat coffee met the passionate junior." class="fonText ft6"></p>
                 </li>
-                <li class="tile light dark">
+                <li class="tile i6 listIt light dark">
                     <div class="tileRow1">
-                        <p class="tileP">
+                        <p class="tileP fType" data-tileIndex="i6">
                             Roboto Condensed
                         </p>
                         <span >
@@ -220,9 +227,9 @@
                     </div>
                     <p data-defaulttext="Did the unequal anything really whistle the stretch? The sparkling priest adds into the squeamish towel." class="fonText ft7"></p>
                 </li>
-                <li class="tile light dark">
+                <li class="tile i7 listIt light dark" >
                     <div class="tileRow1">
-                        <p class="tileP">
+                        <p class="tileP fType" data-tileIndex="i7">
                             Big Shoulders Text 
                         </p>
                         <span >

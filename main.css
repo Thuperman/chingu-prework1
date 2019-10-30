@@ -105,7 +105,13 @@ input {
     z-index: 0;
     margin-left: 20px;
 }
+.pxMenuContainer {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
 .pxMenu {
+    position: absolute;
     display: inline-flex;
     border: 1px solid red;
     height: 20px;
@@ -113,9 +119,11 @@ input {
     margin: 0;
     width: 55px;
     cursor: pointer;
+    line-height: 16px;
 }
 p.currentPx {
     margin: 0;
+    padding-left: 3px;
 }
 #pxOptContainer {
     border: 1px solid red;
@@ -143,9 +151,9 @@ p.currentPx {
     background-color: aqua;
     padding: 0;
     text-align: center;
-    line-height: 16px;
+    line-height: 20px;
     margin: auto;
-    margin-right: 3px;
+    margin-right: 3;
     margin-left: -2px;
     cursor: pointer;
 }
@@ -154,12 +162,29 @@ p.currentPx {
     background-color: grey;
 }
 
+button.list {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    height: 25px;
+    border: none;
+    background-color: inherit;
+    padding-bottom: 3px;
+}
+
+button.redo {
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+}
+
 .pageContainer {
     margin: 20px auto;
     height: 80%;
     width: 90%;
     border: 1px solid red;
     overflow: visible;
+    padding: 0;
 }
 .mainGrid {
     padding: 0;
@@ -167,16 +192,18 @@ p.currentPx {
     width: inherit;
     height: inherit;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     column-gap: 1rem;
+}
+.mgList {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .tile {
     background-color: purple;
     margin: 5px auto;
     border: 5px solid black;
-    width: 300px;
     height: 300px;
     overflow: hidden;
+    display: block;
 }
 .tileRow1 {
     margin: 0;
@@ -198,6 +225,7 @@ p.currentPx {
 .tileP {
     margin: 0;
 }
+
 p.fonText {
     word-wrap: break-word;
     margin: 5px;
@@ -237,3 +265,16 @@ p.fonText.ft8 {
 
 }
 
+@media only screen and (max-width: 790px) {
+    button.list {
+        display: none;
+    }
+    ol.mainGrid.mgList {
+        display: block !important;
+        margin: 0 auto;
+    }
+    .tile {
+        width: 100% !important;
+        margin: inherit;
+    }
+}
