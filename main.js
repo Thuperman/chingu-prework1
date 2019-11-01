@@ -7,19 +7,17 @@ var defaultT = fonText[0].getAttribute("data-defaulttext");
 var tilesList = document.querySelectorAll('.listIt');
 var sFonts = document.querySelector('.searchFonts');
 var fonType = document.querySelectorAll('.fType');
+var mainGrid = document.querySelector('.mainGrid');
+var body = document.querySelector('body');
 var iValue;
 
-//make all the cards show their default on load
-function defaultTileWidth(){
-  tilesList.forEach(element => {
-    element.style.width = '300px';
-  });
-}
+
+
 function redo(){
   sFonts.value = "";
   iTrigger.value = "";
+  mainGrid.style.display = "grid";
   document.querySelector('.currentPx').innerHTML = "14px";
-  defaultTileWidth();
   fonText.forEach(fontCard => {
     fontCard.style.fontSize = "14px";
     fontCard.innerHTML = fontCard.getAttribute("data-defaulttext");
@@ -31,7 +29,6 @@ redo();
 
 //reset the page when redo button clicked
 document.querySelector('.redo').onclick = function(){
-  document.querySelector('.mainGrid').classList.toggle('mgList');
   redo();
 }
 
@@ -55,7 +52,7 @@ var pxMenuContainer = document.querySelector('.pxMenuContainer');
 var pxMenu = document.querySelector(".pxMenu");
 var pxOptContainer = document.querySelector("#pxOptContainer");
 var pxP = document.querySelectorAll(".pxP"); 
-var body = document.querySelector('body');
+
 
 //disable created class for pixel options
 pxP.forEach(element => {
@@ -63,12 +60,13 @@ pxP.forEach(element => {
 });
 
 //listen mouse on and mouse off of the pixel button
+
 pxMenuContainer.addEventListener("mouseover", toggleA1);
 pxOptContainer.addEventListener("mouseout", toggleA2);
 
 //show / hide the pixel option menu
 function toggleA1(){
-  pxOptContainer.style.display = "flex";
+  pxOptContainer.style.display = "inline-block";
   body.style.overflow = "hidden";
 }
 function toggleA2(){
@@ -161,7 +159,7 @@ sFonts.addEventListener("keyup", searchFonts);
 function searchFonts(){
   var targetContent = this.value;
   document.querySelectorAll('.tile').forEach(element => {
-    element.style.display = "inline-block";
+    element.style.display = "block";
   });
   fonType.forEach((e) => {
     var re = new RegExp(targetContent, "gi");
@@ -189,112 +187,34 @@ function toggleLD(){
 //change font layout when list button clicked
 var listB = document.querySelector('.list');
 listB.addEventListener('click', toggleList);
+var counter = 0;
 function toggleList(){
-  document.querySelector('.mainGrid').classList.toggle('mgList');
-  document.querySelectorAll('.tile').forEach(element => {
-    if(element.style.width == "300px"){
-      element.style.width = "100%"
-    } else if(element.style.width == "100%") {
-      element.style.width = "300px";
-    }
-  });
+  if(counter == 0){
+    console.log("changing to block");
+    mainGrid.style.display = "block";
+    counter++;
+    return;
+  } else if(counter == 1){
+    console.log("changing to grid");
+    mainGrid.style.display = "grid";
+    counter--;
+    return;
+  }
 }
+
+
+
+//make all the cards show their default on load
+// function defaultTileWidth(){
+//   tilesList.forEach(element => {
+//     element.style.width = '300px';
+//   });
+// }
 
 
 // if((e.innerHTML.includes(targetContent)) !== true)
 
 
-// case "18px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "18px";
-    // });
-    // break;
-    // case "20px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "20px";
-    // });
-    // break;
-    // case "22px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "22px";
-    // });
-    // break;
-    // case "24px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "24px";
-    // });
-    // break;
-    // case "26px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "26px";
-    // });
-    // break;
-    // case "28px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "28px";
-    // });
-    // break;
-    // case "30px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "30px";
-    // });
-    // break;
-    // case "32px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "32px";
-    // });
-    // break;
-    // case "34px": 
-    // fonText.forEach(e => {
-    //   e.style.fontSize = "34px";
-    // });
-    // break;
-
-
-// if(target == "16px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "16px";
-//   });
-// } else if(target == "18px"){
-//   console.log("18px selected")
-//   fonText.forEach(e => {
-//     console.log("18px for each")
-//     e.style.fontSize = "18px";
-//   });
-// }
-// else if(target == "20px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "20px";
-//   });
-// } else if(target == "22px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "22px";
-//   });
-// } else if(target == "24px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "24px";
-//   });
-// } else if(target == "26px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "26px";
-//   });
-// } else if(target == "28px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "28px";
-//   });
-// } else if(target == "30px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "30px";
-//   });
-// } else if(target == "32px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "32px";
-//   });
-// } else if(target == "34px"){
-//   fonText.forEach(e => {
-//     e.style.fontSize = "34px";
-//   });
-// }
 
 
 
