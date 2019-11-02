@@ -201,19 +201,21 @@ button.redo {
     height: inherit;
     display: grid;
     column-gap: 1rem;
+}
+.mgList {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 
-
 .tile {
     background-color: purple;
-    margin: 5px auto;
-    border: 5px solid black;
+    margin: 5% auto 5% auto;
+    /* border: 5px solid black; */
     height: 300px;
     overflow: hidden;
     display: block;
 }
+
 .tileRow1 {
     margin: 0;
     width: 100%;
@@ -280,10 +282,6 @@ p.fonText.ft8 {
     ol.mainGrid.mgList {
         display: block !important;
     }
-    .tile {
-        margin: 0;
-        width: auto;
-    }
     button.light {
         display: none;
     }
@@ -303,7 +301,6 @@ input {
     margin: 0;
 }
 input.searchFonts {
-    /* width: 300px */
     top: 88px;
 
 }

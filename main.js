@@ -1,16 +1,30 @@
 //Made my Jason P. Warner --inspired by google.
 
+//make mobile version of javascript i.e. no hover
+
 var sFonts = document.querySelector('.searchFonts');
 var iTrigger = document.querySelector("#iTrigger");
 var fonText = document.querySelectorAll(".fonText");
 var defaultT = fonText[0].getAttribute("data-defaulttext"); 
-var tilesList = document.querySelectorAll('.listIt');
 var sFonts = document.querySelector('.searchFonts');
 var fonType = document.querySelectorAll('.fType');
 var mainGrid = document.querySelector('.mainGrid');
+var tilesList = document.querySelectorAll('.listIt');
 var body = document.querySelector('body');
 var iValue;
 
+window.addEventListener('resize', defaultTileWidth);
+
+function defaultTileWidth(){
+  var width = this.innerWidth;
+  tilesList.forEach(element => {
+    if(width > 790){
+    element.style.width = '300px';
+    } else if(width < 790){
+      element.style.width = '';
+    }
+  });
+}
 
 
 function redo(){
@@ -22,6 +36,7 @@ function redo(){
     fontCard.style.fontSize = "14px";
     fontCard.innerHTML = fontCard.getAttribute("data-defaulttext");
   });
+  defaultTileWidth();
   searchFonts();
 }
 //start default on load
@@ -29,6 +44,7 @@ redo();
 
 //reset the page when redo button clicked
 document.querySelector('.redo').onclick = function(){
+  document.querySelector('.mainGrid').classList.toggle('mgList');
   redo();
 }
 
@@ -160,6 +176,8 @@ function searchFonts(){
   var targetContent = this.value;
   document.querySelectorAll('.tile').forEach(element => {
     element.style.display = "block";
+    element.style.overflow = "wrap";
+
   });
   fonType.forEach((e) => {
     var re = new RegExp(targetContent, "gi");
@@ -184,23 +202,49 @@ function toggleLD(){
 
 
 
-//change font layout when list button clicked
 var listB = document.querySelector('.list');
 listB.addEventListener('click', toggleList);
-var counter = 0;
 function toggleList(){
-  if(counter == 0){
-    console.log("changing to block");
-    mainGrid.style.display = "block";
-    counter++;
-    return;
-  } else if(counter == 1){
-    console.log("changing to grid");
-    mainGrid.style.display = "grid";
-    counter--;
-    return;
-  }
+  document.querySelector('.mainGrid').classList.toggle('mgList');
+  document.querySelectorAll('.tile').forEach(element => {
+    if(element.style.width == "300px"){
+      element.style.width = "100%"
+    } else if(element.style.width == "100%") {
+      element.style.width = "300px";
+    }
+  });
 }
+
+
+
+// //change font layout when list button clicked
+// var listB = document.querySelector('.list');
+// listB.addEventListener('click', toggleList);
+// function toggleList(){
+//   var counter = 0;
+//   if(counter == 0){
+//     console.log("changing to block");
+//     mainGrid.style.display = "block";
+//     counter++;
+//     return;
+//   } else if(counter == 1){
+//     console.log("changing to grid");
+//     mainGrid.style.display = "grid";
+//     counter--;
+//     return;
+//   }
+//   // document.querySelectorAll('.tile').forEach(element => {
+//   //   if(counter == 0){
+//   //   element.style.width = "100%";
+//   //   console.log("width to 100");
+//   //   return;
+//   //   } else if(counter == 1){
+//   //     console.log("width to 300");
+//   //     element.style.width = "300px";
+//   //     return;
+//   //   }
+//   // });
+// }
 
 
 
