@@ -1,8 +1,6 @@
 .pSign {
-    padding-top: 5px;
-    padding-right: 1px;
+    padding-top: 3px;
     cursor: pointer;
-
 }
 .downCaret {
     padding: 2px 6px 0 6px;
@@ -39,12 +37,34 @@ nav.topNav.dark{
 nav.topNav.light{
     background-color: #333;
 }
+.logoBox {
+    height: inherit;
+    display: flex;
+    margin: 1px 1px 0 1px;
+}
+.logoBox>a {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+div.logoBox {
+    border: 3px solid white;
+    border-radius: 6px;
+    height: 42px;
+}
+
+a.logo {
+    color: white;
+    text-decoration: none;
+}
 div.buttons {
     display: inline-flex;
     flex-direction: row;
 }
 button.redo {
-    
     width: 20px;
     height: 20px;
     padding: 0 1px 1px 1px;
@@ -61,27 +81,24 @@ button.moonBttn {
     padding: 0;
     margin-right: 30px;
 }
-.logoBox {
-    height: inherit;
-    display: flex;
-}
-.logoBox>a {
-    height: inherit;
-    display: flex;
-    align-items: center;
-    margin: 0px 5px 0px 5px;
-}
 
 
 .navLinx {
     height: inherit;
     display: flex;
+    margin: 1px 0 0 0;
 }
 .navLinx>a {
     height: inherit;
     display: flex;
     align-items: center;
-    margin: 0px 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
+    color: white;
+    text-decoration: none;
+    border-left: solid 3px white;
+    border-top: solid 3px white;
+    border-start-end-radius: 6px;
+    border-start-start-radius: 6px;
 }
 
 
@@ -91,12 +108,12 @@ button.moonBttn {
     width: 100%;
     height: 20px;
     justify-content: center;
-    margin: 10px 0 0 0;
+    margin: 30px 0 0 0;
 }
 .manipBar {
     width: 85%;
     height: inherit;
-    border: 1px solid red;
+    border: 3px solid #333;
     border-radius: 50px;
     display: inline-flex;
     justify-content: space-between;
@@ -117,7 +134,7 @@ input {
 .pxMenu {
     position: absolute;
     display: inline-flex;
-    border: 1px solid red;
+    border: 1px solid #333;
     height: 20px;
     padding: 0;
     margin: 0;
@@ -129,7 +146,7 @@ p.currentPx {
     padding-left: 3px;
 }
 #pxOptContainer {
-    border: 1px solid red;
+    border: 1px solid #333;
     width: 74px;
     height: 100px;
     position: absolute;
@@ -150,8 +167,8 @@ p.currentPx {
     width: 55px;
     height: 100%;
     float: left;
-    border: 1px solid purple;
-    background-color: aqua;
+    border: 1px solid #333;
+    background-color: white;
     padding: 0;
     text-align: center;
     line-height: 20px;
@@ -190,12 +207,12 @@ button.redo {
     margin: 20px auto;
     height: 80%;
     width: 90%;
-    border: 1px solid red;
     overflow: visible;
     padding: 0;
+    background-color: #333;
 }
 .mainGrid {
-    padding: 0;
+    padding: 5% 0 5% 0;
     margin: 5% auto;
     width: inherit;
     height: inherit;
@@ -208,9 +225,8 @@ button.redo {
 
 
 .tile {
-    background-color: purple;
-    margin: 5% auto 5% auto;
-    /* border: 5px solid black; */
+    background-color: white;
+    margin: 0 auto 10vh auto;
     height: 300px;
     overflow: hidden;
     display: block;
@@ -220,18 +236,19 @@ button.redo {
     margin: 0;
     width: 100%;
     height: 20px;
-    background: green;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #333;
 }
 .tileRow2 {
     margin: 0 !important; 
     width: 100%;
     height: 20px;
-    background: blue;
+    background-color: white;
     margin-top: 20px;
-
+    border-bottom: 1px solid #333;
 }
 .tileP {
     margin: 0;
@@ -270,7 +287,9 @@ p.fonText.ft8 {
 .footer {
     width: 100%;
     height: 30px;
-    background-color: gold;
+    background-color: white;
+    border-top: 3px solid #333;
+    border-bottom: 3px solid #333;
     bottom: 0;
     position: fixed;
 }
@@ -288,6 +307,9 @@ p.fonText.ft8 {
     button.dark {
         display: none;
     }
+    li.tile {
+        margin: 0 auto 5% auto;
+    }
 }
 
 @media only screen and (max-width: 555px) {
@@ -301,12 +323,12 @@ input {
     margin: 0;
 }
 input.searchFonts {
-    top: 88px;
+    top: 111px;
 
 }
 div.pxMenuContainer {
     position: absolute;
-    top: 88px;
+    top: 111px;
     right: 136px;
 }
 div#pxOptContainer {

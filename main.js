@@ -1,29 +1,35 @@
 //Made my Jason P. Warner --inspired by google.
 
 //make mobile version of javascript i.e. no hover
-
 var sFonts = document.querySelector('.searchFonts');
 var iTrigger = document.querySelector("#iTrigger");
 var fonText = document.querySelectorAll(".fonText");
-var defaultT = fonText[0].getAttribute("data-defaulttext"); 
 var sFonts = document.querySelector('.searchFonts');
 var fonType = document.querySelectorAll('.fType');
 var mainGrid = document.querySelector('.mainGrid');
 var tilesList = document.querySelectorAll('.listIt');
+var pxMenuContainer = document.querySelector('.pxMenuContainer');
+var pxMenu = document.querySelector(".pxMenu");
+var pxOptContainer = document.querySelector("#pxOptContainer");
+var pxP = document.querySelectorAll(".pxP"); 
 var body = document.querySelector('body');
 var iValue;
 
 window.addEventListener('resize', defaultTileWidth);
-
+var smallScreen;
+var width;
 function defaultTileWidth(){
-  var width = this.innerWidth;
+  width = this.innerWidth;
   tilesList.forEach(element => {
     if(width > 790){
     element.style.width = '300px';
+    smallScreen = false;
     } else if(width < 790){
       element.style.width = '';
+      smallScreen = true;
     }
   });
+  listen();
 }
 
 
@@ -60,26 +66,42 @@ iTrigger.oninput = function() {
   });
 }
 
+
 //PIXEL MENU SHOW/HIDE + HOVER COLOR
 
 //pixel menu show/hide
-//initialize variables
-var pxMenuContainer = document.querySelector('.pxMenuContainer');
-var pxMenu = document.querySelector(".pxMenu");
-var pxOptContainer = document.querySelector("#pxOptContainer");
-var pxP = document.querySelectorAll(".pxP"); 
-
-
 //disable created class for pixel options
 pxP.forEach(element => {
   element.classList.remove("color");
 });
 
-//listen mouse on and mouse off of the pixel button
-
-pxMenuContainer.addEventListener("mouseover", toggleA1);
-pxOptContainer.addEventListener("mouseout", toggleA2);
-
+  function listen(){
+  if(smallScreen == false){
+      //listen mouse on and mouse off of the pixel button
+      pxMenuContainer.addEventListener("mouseover", toggleA1);
+      pxOptContainer.addEventListener("mouseout", toggleA2);
+      //listen for mouse on / off for color pixel options
+      pxP.forEach(element => {
+        element.addEventListener("mouseover", toggleB1);
+      });
+      pxP.forEach(element => {
+        element.addEventListener("mouseout", toggleB2);
+      });
+    } else if(smallScreen == true){
+      //remove the hover event listeners on mobile
+      pxMenuContainer.removeEventListener("mouseover", toggleA1);
+      pxOptContainer.removeEventListener("mouseout", toggleA2);
+      pxP.forEach(element => {
+        element.removeEventListener("mouseover", toggleB1);
+      });
+      pxP.forEach(element => {
+        element.removeEventListener("mouseout", toggleB2);
+      });
+      //add click event listeners for mobile
+      pxMenu.addEventListener("click", toggleA1);
+      pxOptContainer.addEventListener("click", toggleA2);
+  }
+}
 //show / hide the pixel option menu
 function toggleA1(){
   pxOptContainer.style.display = "inline-block";
@@ -89,24 +111,13 @@ function toggleA2(){
   pxOptContainer.style.display = "none";
   body.style.overflow = "hidden scroll";
 }
-
-
-//listen for mouse on / off for color pixel options
-pxP.forEach(element => {
-  element.addEventListener("mouseover", toggleB1);
-});
-pxP.forEach(element => {
-  element.addEventListener("mouseout", toggleB2);
-});
-
 //color on mouse on / mouse out color off for pixel options
-function toggleB1(){
-  this.classList.toggle("color");
-}
-function toggleB2(){
-  this.classList.toggle("color");
-}
-
+  function toggleB1(){
+    this.classList.toggle("color");
+  }
+  function toggleB2(){
+    this.classList.toggle("color");
+  }
 
 //change pixel size of text when pixel option clicked
 //listen for click on pixel options 
@@ -198,9 +209,6 @@ function toggleLD(){
   body.classList.toggle('light');
   document.querySelector('.topNav').classList.toggle('light');
 }
-
-
-
 
 var listB = document.querySelector('.list');
 listB.addEventListener('click', toggleList);
