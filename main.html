@@ -11,46 +11,47 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css?family=Anton|Big+Shoulders+Text|Jomolhari|Liu+Jian+Mao+Cao|Lobster|Open+Sans|Roboto&display=swap" rel="stylesheet">
     </head>
-    <body class="light dark">
+    <body class="dark">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <nav class="topNav light dark">
-            <div class="logoBox">
-                <a class="logo" href="google.com">
+        <nav class="topNav dark">
+            <div class="logoBox dark">
+                <a class="logo dark" href="google.com">
                     Google Fonts.
                 </a>
             </div>
             <div class="navLinx">
-                <a href="#catalog">
+                <a class="a dark" href="#catalog">
                     Catalog
                 </a>
-                <a href="#featured">
+                <a class="a dark" href="#featured">
                     Featured
                 </a>
-                <a href="#article">
+                <a class="a dark" href="#article">
                     Articles
                 </a>
-                <a href="#about">
+                <a class="a dark" href="#about">
                     About
                 </a>
             </div>
         </nav>
 
         <div class="manipContainer"> 
-            <div class="manipBar light dark">
+            <div class="manipBar dark">
                 <form class="navform">
-                    <input class="searchFonts" name="searchFonts" type="text" placeholder="Search Fonts">
-                    <input id="iTrigger" name="typeSomething" class="iTrigger" type="text" placeholder="Type Something">
+                    <input class="searchFonts dark" name="searchFonts" type="text" placeholder="Search Fonts">
+                    <input id="iTrigger" name="typeSomething" class="iTrigger dark" type="text" placeholder="Type Something">
                 </form>
                 <div class="pxMenuContainer">
-                    <button class="pxMenu">
-                        <p class="currentPx">14px</p>
+                    <button class="pxMenu dark">
+                        <p class="currentPx dark">14px</p>
                         <span class="dcSpan">
-                            <img class="downCaret" src="img/caret-down.svg" alt="see menu" width="15px" height="15px">
+                                <i class="fas fa-caret-down fa-lg dark"></i>
                         </span>
                     </button>
                     <div id="pxOptContainer">
@@ -86,162 +87,165 @@
                         </div>
                     </div>
                 </div>
-                <button class="list">
-                    <span>
-                        <img src="img/th-list-solid.svg" alt="" width="20" height="20">
-                    </span>
-                </button>
-                <div class="buttons">
-                    <div class="ldToggle">
-                        <button class="sunBttn light">
-                            <span>
-                                <img class="sun" src="img/sun-solid.svg" width="15" height="15" alt="">
-                            </span>
-                        </button>
-                        <button class="moonBttn dark">
-                            <span>
-                                <img class="moon" src="img/moon-solid.svg" width="15" height="15" alt="">
-                            </span>
-                        </button>
+                <div class="mButtons">
+                    <button id="list">
+                        <span>
+                            <i class="fas fa-th-list fa-lg dark" ></i>
+                        </span>
+                    </button>
+                    <div class="ldButtons">
+                        <div class="ldToggle">
+                            <button class="sunBttn">
+                                <span>
+                                    <i class="fas fa-sun fa-lg dark"></i>
+                                </span>
+                            </button>
+                            <button class="moonBttn">
+                                <span>
+                                    <i class="fas fa-moon dark"></i>
+                                </span>
+                            </button>
+                        </div>
+                    
                     </div>
                     <button class="redo">
-                        <span>
-                            <img src="img/redo-alt-solid.svg" width="15" height="15" alt="">
-                        </span>
+                            <span>
+                                <i class="fas fa-redo-alt fa-lg dark"></i>   
+                            </span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="pageContainer">
+        <div class="pageContainer dark">
             <ol class="mainGrid mgList">
                 <li class="tile i0 listIt light dark">
-                    <div class="tileRow1">
-                        <p class="tileP fType" data-tileIndex="i0">
+                    <div class="tileRow1 dark">
+                        <p class="p dark tileP fType" data-tileIndex="i0">
                             Roboto
                         </p>
                         <span>
                             <img src="img/rounded-add-button.svg" alt="use font" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Christian Robertson
                         </p>
                     </div>
-                    <p data-defaulttext="What if the cheap smile ate the ear? The wiggly fault can't rush the upper." class="fonText ft1"></p>
+                    <p data-defaulttext="What if the cheap smile ate the ear? The wiggly fault can't rush the upper." class="p dark fonText ft1"></p>
                 </li>
                 <li class="tile i1 listIt light dark">
-                    <div class="tileRow1">
-                        <p class="tileP fType" data-tileIndex="i1">
+                    <div class="tileRow1 dark">
+                        <p class="p dark tileP fType" data-tileIndex="i1">
                             Jomolhari
                         </p>
                         <span >
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Christopher J. Fynn
                         </p>
                     </div>
-                    <p data-defaulttext="The sunny chemical can't delay the rule. The awful weight locks into the cylindrical coffee." class="fonText ft2"></p>
+                    <p data-defaulttext="The sunny chemical can't delay the rule. The awful weight locks into the cylindrical coffee." class="p dark fonText ft2"></p>
                 </li>
                 <li class="tile i2 listIt light dark">
-                    <div class="tileRow1">
-                        <p class="tileP fType" data-tileIndex="i2">
+                    <div class="tileRow1 dark">
+                        <p class="p dark tileP fType" data-tileIndex="i2">
                             Liu Jian Mao Cao
                         </p>
                         <span >
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Liu Zhengjiang
                         </p>
                     </div>
-                    <p data-defaulttext="The juicy weird clears into the rebel history. The dismal bitter can't hook the king." class="fonText ft3"></p>
+                    <p data-defaulttext="The juicy weird clears into the rebel history. The dismal bitter can't hook the king." class="p dark fonText ft3"></p>
                 </li>
                 <li class="tile i3 listIt light dark">
-                    <div class="tileRow1">
-                        <p class="tileP fType" data-tileIndex="i3">
+                    <div class="tileRow1 dark">
+                        <p class="p dark tileP fType" data-tileIndex="i3">
                             Open Sans
                         </p>
                         <span >
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Steve Matteson
                         </p>
                     </div>
-                    <p data-defaulttext="The few week can't escape the tennis. Did the neighboring prior really mine the cut?" class="fonText ft4"></p>
+                    <p data-defaulttext="The few week can't escape the tennis. Did the neighboring prior really mine the cut?" class="p dark fonText ft4"></p>
                 </li>
                 <li class="tile i4 listIt light dark">
-                    <div class="tileRow1 ">
-                        <p class="tileP fType" data-tileIndex="i4">
+                    <div class="tileRow1 dark ">
+                        <p class="p dark tileP fType" data-tileIndex="i4">
                             Lato
                         </p>
                         <span >
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Lukasz Dziedzic
                         </p>
                     </div>
-                    <p data-defaulttext="The disloyal bar can't bathe the bunch. Is the kneel help better than the high?" class="fonText ft5"></p>
+                    <p data-defaulttext="The disloyal bar can't bathe the bunch. Is the kneel help better than the high?" class="p dark fonText ft5"></p>
                 </li>
                 <li class="tile i5 listIt light dark">
-                    <div class="tileRow1">
-                        <p class="tileP fType" data-tileIndex="i5">
+                    <div class="tileRow1 dark">
+                        <p class="p dark tileP fType" data-tileIndex="i5">
                             Montserrat
                         </p>
                         <span>
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Impallari Type, Cyrea
                         </p>
                     </div>
-                    <p data-defaulttext="What if the broad maximum ate the raise? It was then the fat coffee met the passionate junior." class="fonText ft6"></p>
+                    <p data-defaulttext="What if the broad maximum ate the raise? It was then the fat coffee met the passionate junior." class="p dark fonText ft6"></p>
                 </li>
                 <li class="tile i6 listIt light dark">
-                    <div class="tileRow1">
-                        <p class="tileP fType" data-tileIndex="i6">
+                    <div class="tileRow1 dark">
+                        <p class="p dark tileP fType" data-tileIndex="i6">
                             Roboto Condensed
                         </p>
                         <span >
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Christian Robertson
                         </p>
                     </div>
-                    <p data-defaulttext="Did the unequal anything really whistle the stretch? The sparkling priest adds into the squeamish towel." class="fonText ft7"></p>
+                    <p data-defaulttext="Did the unequal anything really whistle the stretch? The sparkling priest adds into the squeamish towel." class="p dark fonText ft7"></p>
                 </li>
                 <li class="tile i7 listIt light dark" >
-                    <div class="tileRow1">
-                        <p class="tileP fType" data-tileIndex="i7">
+                    <div class="tileRow1 dark">
+                        <p class="p dark tileP fType" data-tileIndex="i7">
                             Big Shoulders Text 
                         </p>
                         <span >
                             <img src="img/rounded-add-button.svg" alt="" class="pSign" width="20px" height="20px">
                         </span>
                     </div>
-                    <div class="tileRow2">
-                        <p class="tileP">
+                    <div class="tileRow2 dark">
+                        <p class="p dark tileP">
                             Patric King
                         </p>
                     </div>
-                    <p data-defaulttext="Did the studious confidence really turn the cap? It was then the shivering error met the efficacious address." class="fonText ft8"></p>
+                    <p data-defaulttext="Did the studious confidence really turn the cap? It was then the shivering error met the efficacious address." class="p dark fonText ft8"></p>
                 </li>
             </ol>            
         </div>
@@ -253,3 +257,8 @@
         <script src="main.js" async defer></script>
     </body>
 </html>
+
+
+                        <!-- <object class="list listSVG" type="image/svg+xml" data="img/th-list-solid.svg" id="object"></object>
+                        <div class="clickBait"></div> -->
+                        <!-- <img src="img/th-list-solid.svg" alt="" width="20" height="20"> -->

@@ -33,6 +33,8 @@ function defaultTileWidth(){
 }
 
 
+
+
 function redo(){
   sFonts.value = "";
   iTrigger.value = "";
@@ -180,7 +182,7 @@ function toggleTextSize(element){
 }
 
 
-//light dark toggle class
+
 // search fonts 
 sFonts.addEventListener("keyup", searchFonts);
 function searchFonts(){
@@ -199,20 +201,12 @@ function searchFonts(){
     }
   });
 }
-
-//initialize
-var ldToggle = document.querySelector('.ldToggle');
-
-ldToggle.addEventListener('click', toggleLD);
-
-function toggleLD(){
-  body.classList.toggle('light');
-  document.querySelector('.topNav').classList.toggle('light');
-}
-
-var listB = document.querySelector('.list');
+ 
+//toggle list view
+var listB = document.querySelector('#list');
 listB.addEventListener('click', toggleList);
 function toggleList(){
+  console.log(this);
   document.querySelector('.mainGrid').classList.toggle('mgList');
   document.querySelectorAll('.tile').forEach(element => {
     if(element.style.width == "300px"){
@@ -223,6 +217,73 @@ function toggleList(){
   });
 }
 
+//light dark toggle class
+
+var ldToggle = document.querySelector('.ldToggle');
+var dark = false;
+ldToggle.addEventListener('click', toggleLD);
+function toggleLD(){
+  body.classList.toggle('dark');
+  document.querySelector('.topNav').classList.toggle('dark');
+  document.querySelector('.logoBox').classList.toggle('dark');
+  document.querySelector('.logo').classList.toggle('dark');
+  document.querySelectorAll('.a').forEach(element => {
+    element.classList.toggle('dark');
+  });
+  document.querySelector('.manipBar').classList.toggle('dark');
+  document.querySelectorAll('input').forEach(element => {
+    element.classList.toggle('dark');
+  });
+  document.querySelector('.currentPx').classList.toggle('dark');
+  document.querySelector('.fa-caret-down').classList.toggle('dark');
+  document.querySelector('.fa-sun').classList.toggle('dark');
+  document.querySelector('.fa-moon').classList.toggle('dark');
+  document.querySelector('.fa-th-list').classList.toggle('dark');
+  document.querySelector('.fa-redo-alt').classList.toggle('dark');
+  document.querySelector('.pxMenu').classList.toggle('dark');
+  document.querySelector('.pageContainer').classList.toggle('dark');
+  document.querySelectorAll('.tile').forEach(element => {
+    element.classList.toggle('dark');
+  });
+  document.querySelectorAll('.p').forEach(element => {
+    element.classList.toggle('dark');
+  });
+  document.querySelectorAll('.tileRow1').forEach(element => {
+    element.classList.toggle('dark');
+  });
+  document.querySelectorAll('.tileRow2').forEach(element => {
+    element.classList.toggle('dark');
+  });
+
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if(dark == false){
+//   document.querySelector(".listSVG").getSVGDocument().getElementById("listSVG").style.fill = "white";
+//   document.querySelector(".sunBttn").getSVGDocument().getElementById("sunBttn").style.fill = "white";
+//   console.log("turning black");
+//   dark = true;
+//   return;
+// } 
+// if(dark == true){
+//   document.querySelector(".downCaret").getSVGDocument().getElementById("svgInternalID").style.fill = "#333";
+//   document.querySelector(".listSVG").getSVGDocument().getElementById("listSVG").style.fill = "#333";
+//   console.log("turning white");
+//   dark = false;
+//   return;
+// } 
 
 
 // //change font layout when list button clicked

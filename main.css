@@ -1,12 +1,21 @@
+#svgInternalID.toggleSVG {
+    fill: yellowgreen;
+}
+
 .pSign {
     padding-top: 3px;
     cursor: pointer;
 }
-.downCaret {
+i.fas.fa-caret-down {
     padding: 2px 6px 0 6px;
+    color: WHITE;
 }
+i.fas.fa-caret-down.dark {
+    color: #333;
 
+}
 body{
+    background-color: #333;
     width: 100%;
     height: 100%;
     margin: 0 0 20px 0;
@@ -18,9 +27,6 @@ background-color: inherit;
 cursor: pointer;
 }
 body.dark {
-    background-color: #333;
-}
-body.light {
     background-color: white;
 }
 
@@ -30,11 +36,9 @@ nav.topNav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-nav.topNav.dark{
     background-color: white;
 }
-nav.topNav.light{
+nav.topNav.dark{
     background-color: #333;
 }
 .logoBox {
@@ -51,12 +55,18 @@ nav.topNav.light{
     text-align: center;
 }
 div.logoBox {
-    border: 3px solid white;
+    border: 3px solid #333;
     border-radius: 6px;
     height: 42px;
 }
-
+div.logoBox.dark {
+    border: 3px solid white;
+}
 a.logo {
+    color: #333;
+    text-decoration: none;
+}
+a.logo.dark {
     color: white;
     text-decoration: none;
 }
@@ -70,18 +80,31 @@ button.redo {
     padding: 0 1px 1px 1px;
 }
 button.sunBttn {
-    
     width: 20px;
     height: 20px;
     padding: 0;
+
+}
+i.fa-moon, i.fa-sun{
+    position: absolute;
+    top: 86px;
+    color: white;
+}
+i.fa-moon.dark, i.fa-sun.dark{
+    color: #333;
+}
+button.sunBttn.dark {
+    color: #333;
 }
 button.moonBttn {
     width: 20px;
     height: 20px;
     padding: 0;
-    margin-right: 30px;
 }
 
+svg#testing123 {
+    fill: purple;
+}
 
 .navLinx {
     height: inherit;
@@ -93,14 +116,18 @@ button.moonBttn {
     display: flex;
     align-items: center;
     padding: 0px 5px 0px 5px;
-    color: white;
+    color: #333;
     text-decoration: none;
-    border-left: solid 3px white;
-    border-top: solid 3px white;
+    border-left: solid 3px #333;
+    border-top: solid 3px #333;
     border-start-end-radius: 6px;
     border-start-start-radius: 6px;
 }
-
+.navLinx>a.dark {
+    color: white;
+    border-left: solid 3px white;
+    border-top: solid 3px white;
+}
 
 .manipContainer {
     display: flex;
@@ -113,10 +140,13 @@ button.moonBttn {
 .manipBar {
     width: 85%;
     height: inherit;
-    border: 3px solid #333;
+    border: 3px solid white;
     border-radius: 50px;
     display: inline-flex;
     justify-content: space-between;
+}
+.manipBar.dark {
+    border: 3px solid #333;
 }
 .manipBar>p {
     margin: 0;
@@ -125,6 +155,12 @@ input {
     border: none;
     z-index: 0;
     margin-left: 20px;
+    background-color: #333;
+    color: white;
+}
+input.dark  {
+    background-color: white;
+    color: #333;
 }
 .pxMenuContainer {
     display: inline-block;
@@ -134,19 +170,26 @@ input {
 .pxMenu {
     position: absolute;
     display: inline-flex;
-    border: 1px solid #333;
+    border: 1px solid white;
     height: 20px;
     padding: 0;
     margin: 0;
     width: 55px;
     line-height: 16px;
 }
+.pxMenu.dark {
+    border: 1px solid #333;
+}
 p.currentPx {
     margin: 0;
     padding-left: 3px;
+    color: white;
+}
+p.currentPx.dark {
+    color: #333;
 }
 #pxOptContainer {
-    border: 1px solid #333;
+    border: 1px solid white;
     width: 74px;
     height: 100px;
     position: absolute;
@@ -157,6 +200,8 @@ p.currentPx {
     margin-left: -1px;
     justify-content: space-between;
 }
+/* #pxOptContainer.dark {
+} */
 .pxOpt {
     display: flex;
     flex-direction: row;
@@ -181,19 +226,42 @@ p.currentPx {
 .pxP.color {
     background-color: grey;
 }
+.mButtons {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 200px;
+    height: 20px;
+}
 
-button.list {
+button#list {
     padding: 0;
     margin: 0;
-    
     height: 25px;
     border: none;
     background-color: inherit;
     padding-bottom: 3px;
+    /* display: none; */
+}
+i.fa-th-list {
+    color: white;
+}
+i.fa-th-list.dark {
+    color: #333;
 }
 
-.buttons {
-    margin: 2px 3px 0 3px;
+i.fa-redo-alt {
+    position: absolute;
+    top: 86px;
+    margin-left: -11px;
+    display: inline-flex;
+    color: white;
+}
+i.fa-redo-alt.dark {
+    color: #333;
+}
+
+.ldButtons {
+    display: inline-flex;
 }
 
 button.redo {
@@ -209,7 +277,11 @@ button.redo {
     width: 90%;
     overflow: visible;
     padding: 0;
+    background-color: white;
+}
+.pageContainer.dark {
     background-color: #333;
+
 }
 .mainGrid {
     padding: 5% 0 5% 0;
@@ -225,30 +297,42 @@ button.redo {
 
 
 .tile {
-    background-color: white;
+    background-color: #333;
     margin: 0 auto 10vh auto;
     height: 300px;
     overflow: hidden;
     display: block;
 }
-
+.tile.dark {
+    background-color: white;
+}
+p.p{
+    color: white;
+}
+p.p.dark {
+    color: #333;
+}
+.tileRow1, .tileRow2 {
+    border-bottom: 1px solid white;
+}
+.tileRow1.dark, .tileRow2.dark {
+    border-bottom: 1px solid #333;
+}
 .tileRow1 {
     margin: 0;
     width: 100%;
     height: 20px;
-    background-color: white;
+    background-color: inherit;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #333;
 }
 .tileRow2 {
     margin: 0 !important; 
     width: 100%;
     height: 20px;
-    background-color: white;
+    background-color: inherit;
     margin-top: 20px;
-    border-bottom: 1px solid #333;
 }
 .tileP {
     margin: 0;
@@ -295,17 +379,15 @@ p.fonText.ft8 {
 }
 
 @media only screen and (max-width: 790px) {
-    button.list {
+    .ldButtons {
+        display: block;
+        padding-left: 50%;
+    }
+    button#list {
         display: none;
     }
     ol.mainGrid.mgList {
         display: block !important;
-    }
-    button.light {
-        display: none;
-    }
-    button.dark {
-        display: none;
     }
     li.tile {
         margin: 0 auto 5% auto;
@@ -313,28 +395,34 @@ p.fonText.ft8 {
 }
 
 @media only screen and (max-width: 555px) {
-button.redo {
-    position: absolute;
-    right: 100px;
-}
-input {
-    left: 75px;
-    position: absolute;
-    margin: 0;
-}
-input.searchFonts {
-    top: 111px;
+    .ldButtons {
+        position: absolute;
+        top: 0;
+        right: 70px;
+    }
+    button.redo {
+        position: absolute;
+        top: 0px;
+        right: 110px;
+    }
+    input {
+        left: 75px;
+        position: absolute;
+        margin: 0;
+    }
+    input.searchFonts {
+        top: 111px;
 
-}
-div.pxMenuContainer {
-    position: absolute;
-    top: 111px;
-    right: 136px;
-}
-div#pxOptContainer {
-    top: 23px !important;
-}
-.manipContainer {
-    height: 50px;
-}
+    }
+    div.pxMenuContainer {
+        position: absolute;
+        top: 111px;
+        right: 136px;
+    }
+    div#pxOptContainer {
+        top: 23px !important;
+    }
+    .manipContainer {
+        height: 50px;
+    }
 }
