@@ -52,10 +52,22 @@ redo();
 
 //reset the page when redo button clicked
 document.querySelector('.redo').onclick = function(){
-  document.querySelector('.mainGrid').classList.toggle('mgList');
   redo();
+  tileView();
 }
 
+function wideView(){
+  mainGrid.style.display = "block";
+  document.querySelectorAll('.tile').forEach(element => {
+    element.style.width = "100%";
+  });
+}
+function tileView(){
+  mainGrid.style.display = "grid";
+  document.querySelectorAll('.tile').forEach(element => {
+    element.style.width = "300px";
+  });
+}
 
 //change font card to input value and then revert to default if no value
 iTrigger.oninput = function() {
@@ -205,19 +217,45 @@ function searchFonts(){
 //toggle list view
 var listB = document.querySelector('#list');
 listB.addEventListener('click', toggleList);
+var lCounter = 0;
 function toggleList(){
-  console.log(this);
-  document.querySelector('.mainGrid').classList.toggle('mgList');
-  document.querySelectorAll('.tile').forEach(element => {
-    if(element.style.width == "300px"){
-      element.style.width = "100%"
-    } else if(element.style.width == "100%") {
-      element.style.width = "300px";
-    }
-  });
+   // document.querySelector('.mainGrid').classList.toggle('mgList');
+
+  if(lCounter == 0){
+    wideView();
+    lCounter++;
+    return
+  } else if(lCounter == 1){
+    tileView();
+    lCounter--;
+  }
+
+  // document.querySelectorAll('.tile').forEach(element => {
+  //   if(element.style.width == "300px"){
+  //     element.style.width = "100%"
+  //   } else if(element.style.width == "100%") {
+  //     element.style.width = "300px";
+  //   }
+  // });
 }
 
 //light dark toggle class
+function toggleLDcolor(){
+  counter = 0;
+  var sun = document.querySelector('.sunBttn');
+  var moon = document.querySelector('.moonBttn');
+  if(counter == 0){
+    sun.classList.toggle('hide');
+    moon.classList.toggle('show');
+    counter++;
+    return
+  } else if(couner == 1) {
+    moon.classList.toggle('show');
+    sun.classList.toggle('hide');
+    counter--;
+    return
+  }
+}
 
 var ldToggle = document.querySelector('.ldToggle');
 var dark = false;
@@ -255,7 +293,7 @@ function toggleLD(){
     element.classList.toggle('dark');
   });
 
-
+  toggleLDcolor();
 } 
 
 
