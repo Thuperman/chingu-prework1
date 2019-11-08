@@ -304,13 +304,14 @@ button.redo {
     width: inherit;
     height: inherit;
     display: grid;
-    column-gap: 1rem;
+    column-gap: 5%;
+    row-gap: 5vw;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .tile {
     background-color: #333;
-    margin: 0 auto 10vh auto;
+    margin: 0 auto 0 auto;
     height: 300px;
     overflow: hidden;
     display: block;

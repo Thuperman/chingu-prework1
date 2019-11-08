@@ -13,6 +13,7 @@ var pxMenu = document.querySelector(".pxMenu");
 var pxOptContainer = document.querySelector("#pxOptContainer");
 var pxP = document.querySelectorAll(".pxP"); 
 var body = document.querySelector('body');
+var tCounter = 0;
 var iValue;
 
 window.addEventListener('resize', defaultTileWidth);
@@ -31,9 +32,6 @@ function defaultTileWidth(){
   });
   listen();
 }
-
-
-
 
 function redo(){
   sFonts.value = "";
@@ -54,12 +52,19 @@ redo();
 document.querySelector('.redo').onclick = function(){
   redo();
   tileView();
+  if(tCounter == 1){
+    console.log("fired");
+    togglerz();
+    tCounter = 0;
+  }
 }
+
 
 function wideView(){
   mainGrid.style.display = "block";
   document.querySelectorAll('.tile').forEach(element => {
     element.style.width = "100%";
+    element.style.marginBottom = "5%";
   });
 }
 function tileView(){
@@ -257,10 +262,7 @@ function toggleLDcolor(){
   }
 }
 
-var ldToggle = document.querySelector('.ldToggle');
-var dark = false;
-ldToggle.addEventListener('click', toggleLD);
-function toggleLD(){
+function togglerz(){
   body.classList.toggle('dark');
   document.querySelector('.topNav').classList.toggle('dark');
   document.querySelector('.logoBox').classList.toggle('dark');
@@ -293,9 +295,24 @@ function toggleLD(){
     element.classList.toggle('dark');
   });
 
-  toggleLDcolor();
-} 
+}
 
+var ldToggle = document.querySelector('.ldToggle');
+var dark = false;
+ldToggle.addEventListener('click', toggleLD);
+function toggleLD(){
+  togglerz();
+  toggleLDcolor();
+  if(tCounter == 0){
+    tCounter++;
+    return tCounter;
+  } else if(tCounter == 1){
+    tCounter++;
+    if(tCounter == 2) {
+      tCounter = 0;
+    }
+  }
+} 
 
 
 
