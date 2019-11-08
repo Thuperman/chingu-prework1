@@ -405,10 +405,8 @@ p.fonText.ft8 {
     li.tile {
         margin: 0 auto 5% auto;
     }
-    .pxMenu {
-        position: absolute;
-        top: 83px;
-        right: 25%;
+    div.pxMenuContainer {
+        margin-right: -170px;
     }
     input {
         width: 100px;
@@ -443,6 +441,7 @@ p.fonText.ft8 {
         position: absolute;
         top: 111px;
         right: 136px;
+        margin: 0;
     }
     div#pxOptContainer {
         top: 6px;
