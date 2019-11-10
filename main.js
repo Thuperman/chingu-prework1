@@ -277,6 +277,7 @@ function togglerz(){
   document.querySelector('.fa-redo-alt').classList.toggle('dark');
   document.querySelector('.pxMenu').classList.toggle('dark');
   document.querySelector('.pageContainer').classList.toggle('dark');
+  document.querySelector('.footer').classList.toggle('dark');
   document.querySelectorAll('.tile').forEach(element => {
     element.classList.toggle('dark');
   });
