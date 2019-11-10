@@ -202,15 +202,8 @@ input.iTrigger.dark {
     border-left: 3px solid #333;
     border-right: 3px solid #333;
 }
-/* input.dark  {
-    background-color: white;
-    color: white;
-    border-left: 3px solid white;
-    border-right: 3px solid #white;
-} */
 .pxMenuContainer {
     display: block;
-    /* margin-left: -100px; */
     padding: 0;
     z-index: 0;
     position: absolute;
@@ -244,7 +237,7 @@ p.currentPx.dark {
 }
 #pxOptContainer {
     border: 1px solid white;
-    width: 66px;
+    width: 76px;
     height: 100px;
     position: absolute;
     display: none;
@@ -252,11 +245,9 @@ p.currentPx.dark {
     left: 3px;
     flex-direction: column;
     overflow: hidden scroll;
-    /* margin-left: -1px; */
     justify-content: space-between;
 }
-/* #pxOptContainer.dark {
-} */
+
 .pxOpt {
     display: flex;
     flex-direction: row;
@@ -281,13 +272,6 @@ p.currentPx.dark {
 .pxP.color {
     background-color: grey;
 }
-/* .mButtons {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 200px;
-    height: 20px;
-} */
-
 button#list {
     padding: 0;
     margin: 0;
@@ -454,6 +438,9 @@ p.pFoot {
     color: red;
 }
 @media only screen and (max-width: 790px) {
+    div#pxOptContainer{
+        width: 66px;
+    }
     button#list {
         display: none;
     }
