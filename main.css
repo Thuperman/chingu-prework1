@@ -84,8 +84,8 @@ button.sunBttn {
     height: 20px;
     padding: 0;
     position: absolute;
-    right: 13%;
-    top: 0px;
+    right: 39%;
+    top: 1px;
     display: inline-flex;
 }
 button.sunBttn.hide {
@@ -94,7 +94,7 @@ button.sunBttn.hide {
 }
 i.fa-moon, i.fa-sun{
     position: absolute;
-    top: 86px;
+    top: 92px;
     color: white;
 }
 i.fa-moon.dark, i.fa-sun.dark{
@@ -109,7 +109,7 @@ button.moonBttn {
     padding: 0;
     position: absolute;
     top: 0;
-    right: 13%;
+    right: 39%;
     display: none;
 }
 button.moonBttn.show {
@@ -146,7 +146,7 @@ svg#testing123 {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 20px;
+    height: 33px;
     justify-content: center;
     margin: 30px 0 0 0;
 }
@@ -167,34 +167,71 @@ svg#testing123 {
 input {
     border: none;
     z-index: 0;
-    margin-left: 20px;
+    margin-left: 0px;
     background-color: #333;
     color: white;
+    margin-top: 0px;
+    text-align: center;
+    margin-left: 10px;
+    display: inline-flex;
+    position: block;
 }
-input.dark  {
+input.dark {
     background-color: white;
     color: #333;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
 }
+input.searchFonts{
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 20vw;
+    height: 30px;
+}
+input.iTrigger {
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    width: 20vw;
+    height: 30px;
+}
+input.iTrigger.dark {
+    border-left: 3px solid #333;
+    border-right: 3px solid #333;
+}
+/* input.dark  {
+    background-color: white;
+    color: white;
+    border-left: 3px solid white;
+    border-right: 3px solid #white;
+} */
 .pxMenuContainer {
-    display: inline-block;
-    margin: 0;
+    display: block;
+    /* margin-left: -100px; */
     padding: 0;
+    z-index: 0;
+    position: absolute;
+    right: 11%;
 }
 .pxMenu {
-    position: absolute;
+    position: static;
     display: inline-flex;
     border: 1px solid white;
-    height: 20px;
+    height: 33px;
     padding: 0;
     margin: 0;
-    width: 55px;
-    line-height: 16px;
+    width: 66px;
+    line-height: 30px;
+    text-align: center;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
 }
 .pxMenu.dark {
-    border: 1px solid #333;
-}
+    border-top: 0;
+    border-left: 3px solid #333;
+    border-right: 3px solid #333;
+}   
 p.currentPx {
-    margin: 0;
+    margin: 0 auto;
     padding-left: 3px;
     color: white;
 }
@@ -203,14 +240,15 @@ p.currentPx.dark {
 }
 #pxOptContainer {
     border: 1px solid white;
-    width: 74px;
+    width: 66px;
     height: 100px;
     position: absolute;
     display: none;
-    top: 85px;
+    top: 35px;
+    left: 3px;
     flex-direction: column;
     overflow: hidden scroll;
-    margin-left: -1px;
+    /* margin-left: -1px; */
     justify-content: space-between;
 }
 /* #pxOptContainer.dark {
@@ -219,10 +257,10 @@ p.currentPx.dark {
     display: flex;
     flex-direction: row;
     min-height: 20px;
-    width: 100%;
+    width: 66px;
 }
 .pxP {
-    width: 55px;
+    width: 60px;
     height: 100%;
     float: left;
     border: 1px solid #333;
@@ -239,12 +277,12 @@ p.currentPx.dark {
 .pxP.color {
     background-color: grey;
 }
-.mButtons {
+/* .mButtons {
     display: inline-flex;
     justify-content: space-between;
     width: 200px;
     height: 20px;
-}
+} */
 
 button#list {
     padding: 0;
@@ -254,8 +292,8 @@ button#list {
     background-color: inherit;
     padding-bottom: 3px;
     position: absolute;
-    top: 83px;
-    right: 20%;
+    top: 89px;
+    right: 27%;
 }
 i.fa-th-list {
     color: white;
@@ -266,7 +304,7 @@ i.fa-th-list.dark {
 
 i.fa-redo-alt {
     position: absolute;
-    top: 86px;
+    top: 92px;
     margin-left: -11px;
     display: inline-flex;
     color: white;
@@ -392,10 +430,6 @@ p.fonText.ft8 {
 }
 
 @media only screen and (max-width: 790px) {
-    .ldButtons {
-        display: block;
-        padding-left: 50%;
-    }
     button#list {
         display: none;
     }
@@ -405,47 +439,95 @@ p.fonText.ft8 {
     li.tile {
         margin: 0 auto 5% auto;
     }
-    div.pxMenuContainer {
-        margin-right: -170px;
-    }
     input {
         width: 100px;
     }
+    i.fa-sun, i.fa-moon {
+        left: 8vw;
+    }
+    button.ldButtons {
+        position: absolute;
+        right: 50px;
+    }
+    .redo {
+        margin: 0 auto;
+        margin-right: -1.5px;
+    }
+    input.iTrigger, input.searchFonts {
+        height: 31px;
+    }
 }
 
+
 @media only screen and (max-width: 555px) {
-    .pxMenu {
-        top: -14.5px;
-        right: -30px;
+    i.fa-sun, i.fa-moon {
+        left: 3vw;
+        right: 0;
+        margin: 0 5px 0 -15px;
+        padding: 8px 0 0 0;
+        display: block;
     }
-    .ldButtons {
+    .pxMenu {
         position: absolute;
-        top: 14px;
-        right: 40px;
+        top: -28px;
+        right: 50%;
+        padding-left: 50%;
+        height: 51px;
+        line-height: 50px;
+        border-bottom: 1px solid #333;
     }
     button.redo {
         position: absolute;
-        top: 14px;
+        top: 10px;
         right: 10%;
-    }
-    input {
-        left: 55px;
-        position: absolute;
-        margin: 0;
     }
     input.searchFonts {
         top: 111px;
 
     }
+    input.iTrigger, input.searchFonts {
+        left: 5.2%;
+        position: absolute;
+        margin: 0;
+        height: 23.5px !important;
+        width: 43%;
+        margin-left: -10px;
+        border-left: none !important; 
+        padding: 0;
+        margin-left: 2.3%;
+    }
+    input.searchFonts {
+        border-top: solid black 1.5px;
+        border-top-left-radius: 0;
+        margin-top: -3px;
+        padding-top: 0;
+        border-bottom-left-radius: 200px;
+        border-top: 2px solid white;
+        border-right: 3px solid white;
+        height: 23px !important;
+
+    }
+    input.searchFonts.dark {
+        border-top: 2px solid black;
+        border-right: 3px solid black;
+    }
+    input.iTrigger {
+        border-top-left-radius: 150px;
+        padding-bottom: 0;
+        border-bottom: 2px solid white;
+    }
+    input.iTrigger.dark {
+        border-bottom: 2px solid black;
+    }
     div.pxMenuContainer {
         position: absolute;
         top: 111px;
-        right: 136px;
+        right: 20%;
         margin: 0;
     }
     div#pxOptContainer {
-        top: 6px;
-        right: -50px;
+        top: 25px;
+        left: -63px;
     }
     .manipContainer {
         height: 50px;

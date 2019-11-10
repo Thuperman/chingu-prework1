@@ -25,6 +25,7 @@ function defaultTileWidth(){
     if(width > 790){
     element.style.width = '300px';
     smallScreen = false;
+    
     } else if(width < 790){
       element.style.width = '';
       smallScreen = true;
@@ -37,9 +38,9 @@ function redo(){
   sFonts.value = "";
   iTrigger.value = "";
   mainGrid.style.display = "grid";
-  document.querySelector('.currentPx').innerHTML = "14px";
+  document.querySelector('.currentPx').innerHTML = "22px";
   fonText.forEach(fontCard => {
-    fontCard.style.fontSize = "14px";
+    fontCard.style.fontSize = "22px";
     fontCard.innerHTML = fontCard.getAttribute("data-defaulttext");
   });
   defaultTileWidth();
@@ -51,14 +52,15 @@ redo();
 //reset the page when redo button clicked
 document.querySelector('.redo').onclick = function(){
   redo();
-  tileView();
   if(tCounter == 1){
-    console.log("fired");
     togglerz();
+    toggleLDcolor();
     tCounter = 0;
   }
+  if(smallScreen == false){
+    tileView();
+  }
 }
-
 
 function wideView(){
   mainGrid.style.display = "block";
@@ -234,14 +236,6 @@ function toggleList(){
     tileView();
     lCounter--;
   }
-
-  // document.querySelectorAll('.tile').forEach(element => {
-  //   if(element.style.width == "300px"){
-  //     element.style.width = "100%"
-  //   } else if(element.style.width == "100%") {
-  //     element.style.width = "300px";
-  //   }
-  // });
 }
 
 //light dark toggle class
@@ -274,6 +268,7 @@ function togglerz(){
   document.querySelectorAll('input').forEach(element => {
     element.classList.toggle('dark');
   });
+  // document.querySelector('.iTrigger').classList.toggle('dark');
   document.querySelector('.currentPx').classList.toggle('dark');
   document.querySelector('.fa-caret-down').classList.toggle('dark');
   document.querySelector('.fa-sun').classList.toggle('dark');
@@ -313,6 +308,8 @@ function toggleLD(){
     }
   }
 } 
+// var moveBy;
+// moveBy = document.querySelector('.ldButtons').style.left;
 
 
 
@@ -320,9 +317,13 @@ function toggleLD(){
 
 
 
-
-
-
+  // document.querySelectorAll('.tile').forEach(element => {
+  //   if(element.style.width == "300px"){
+  //     element.style.width = "100%"
+  //   } else if(element.style.width == "100%") {
+  //     element.style.width = "300px";
+  //   }
+  // });
 
 
 // if(dark == false){
